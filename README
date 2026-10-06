@@ -1,1 +1,59 @@
+# Projet de programmation web – Site de présentation de mes compétences
 
+Tshazly · BUT Science des Données (parcours VCOD) · IUT Besançon-Vesoul, site de Dole
+
+## Sujet et objectif
+
+Ce projet est un site web qui met en valeur mes compétences, issues du BUT
+Science des Données et de mes expériences personnelles, auprès de futurs
+employeurs et de formations. Il présente mon parcours à travers des
+visualisations de données interactives. Mon objectif professionnel est de
+devenir Data Scientist, plus particulièrement dans les institutions publiques
+et le secteur médico-social.
+
+## Données utilisées
+
+- Mes notes et mon volume horaire par compétence et par semestre
+  (source : mes relevés de notes, saisis dans `donnees/[nom].csv`)
+- Mes projets : titre, description, outils, lien vers le code
+  (source : saisie manuelle, `donnees/[nom].csv`)
+- [Autre jeu de données si besoin : nom, source, lien, date de récupération]
+
+## Fonctionnalités
+
+- Navigation entre les sections : Accueil, Compétences, Parcours BUT SD,
+  Analyse, Notes, Projets, Documents
+- Visualisation du volume horaire par compétence et de l'évolution par semestre
+- Visualisation de mes notes avec des filtres [par semestre, par module]
+- Présentation de mes projets avec des filtres [par outil, par domaine]
+- Accès à mon CV et à mes documents
+
+## Technologies et bibliothèques
+
+- [Langage : à compléter après le TD2]
+- [Bibliothèque de visualisation : à compléter]
+- [Base de données : à compléter]
+
+## Lancer le projet
+
+1. Cloner le dépôt :
+```bash
+   git clone https://github.com/tshazlytembo123-bot/tshazly-man-tte.git
+   cd tshazly-man-tte
+```
+2. [Installer les dépendances : à compléter]
+3. [Lancer le site : à compléter]
+
+## Organisation du dépôt
+
+- `maquette/` : maquettes du site et leurs évolutions
+- `donnees/` : jeux de données utilisés
+- `AVANCEMENT.md` : journal de bord et planning suivi au fil du projet
+
+## Difficultés et limites connues
+
+- [À compléter au fur et à mesure du projet]
+
+## Contact
+
+tshazlytembo123@gmail.com · [LinkedIn](https://www.linkedin.com/in/tshazly-tte-tembo) · [GitHub](https://github.com/tshazlytembo123-bot)
