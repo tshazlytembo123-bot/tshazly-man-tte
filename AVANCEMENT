@@ -5,20 +5,20 @@ Projet de programmation web : site de présentation de mes compétences
 
 ## Planning prévisionnel
 
-| Tâche | Prévu | État | Commentaire |
-|---|---|---|---|
-| Choix du sujet et des données | S41 (6/10) | En cours | |
-| Initialisation du dépôt Git | S41 | Terminé | Dépôt public sur GitHub |
-| README | S41 | Terminé | À compléter au fil du projet |
-| Maquette du site | S41–S42 | En cours | À finaliser avant le TD2 |
-| Architecture générale | S43 (23/10) | À faire | Dépend de la maquette |
-| Préparation des données | S43–S47 | À faire | |
-| Partie serveur (base de données + contrôleur) | S48 (23/11) | À faire | Dépend des données |
-| Visualisations | S48 (24/11) | À faire | Dépend de la partie serveur |
-| Interactions et filtres | S49 | À faire | |
-| Tests et corrections | S49 | À faire | |
-| Documentation | En continu | En cours | Finalisation en S49 |
-| Préparation de l'oral | Semestre 6 | À faire | |
+ Tâche ; Prévu ; État ; Commentaire ;
+
+ Choix du sujet et des données , S41 (6/10) , En cours ,
+ Initialisation du dépôt Git , S41 , Terminé , Dépôt public sur GitHub ,
+ README , S41 , Terminé , À compléter au fil du projet ,
+ Maquette du site | S41–S42 | En cours , À finaliser avant le TD2 ,
+ Architecture générale , S43 (23/10) , À faire , Dépend de la maquette ,
+ Préparation des données , S43–S47 , À faire 
+ Partie serveur (base de données + contrôleur) , S48 (23/11) , À faire , Dépend des données ,
+ Visualisations , S48 (24/11) , À faire , Dépend de la partie serveur ,
+ Interactions et filtres , S49 , À faire ,
+ Tests et corrections , S49 , À faire ,
+ Documentation  En continu , En cours , Finalisation en S49 ,
+ Préparation de l'oral , Semestre 6 , À faire 
 
 ## Jalons
 
@@ -27,16 +27,18 @@ fonctionnelle → Visualisations intégrées → Tests et corrections → Versio
 
 ## Journal d'avancement
 
-### Semaine 41 (6/10)
+### Semaine S41, 6/10)
 - Création du dépôt Git sur GitHub et passage en public
 - Rédaction du README (sujet, données, fonctionnalités, instructions)
 - Réalisation du premier planning prévisionnel
 - Début de la maquette du site
 
-### Semaine 42
-- [À compléter]
+### Semaine S43, 23/10)
+-  En cours , À finaliser avant le TD2 ,
 
-## À faire
+## Semaine S43, 23/10)
+Architecture générale
+
 
 - Choisir et récupérer les données
 - Finaliser la maquette (pages Accueil, Compétences, Notes, Projets, Documents)
