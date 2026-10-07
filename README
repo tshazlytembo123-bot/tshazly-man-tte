@@ -13,8 +13,8 @@ et le secteur médico-social.
 
 ## Données utilisées
 
-- Mes notes et mon volume horaire par compétence et par semestre
-  (source : mes relevés de notes, saisis dans `donnees/[nom].csv`)
+- Mes résultats obtenues lors des projets et mon volume horaire par compétence et par semestre
+  (source : mes relevés de notes, jeu de données`)
 - Mes projets : titre, description, outils, lien vers le code
   (source : saisie manuelle, `donnees/[nom].csv`)
 - [Autre jeu de données si besoin : nom, source, lien, date de récupération]
@@ -22,7 +22,7 @@ et le secteur médico-social.
 ## Fonctionnalités
 
 - Navigation entre les sections : Accueil, Compétences, Parcours BUT SD,
-  Analyse, Notes, Projets, Documents
+  Analyse, resultat , Projets, Documents
 - Visualisation du volume horaire par compétence et de l'évolution par semestre
 - Visualisation de mes notes avec des filtres [par semestre, par module]
 - Présentation de mes projets avec des filtres [par outil, par domaine]
@@ -50,7 +50,7 @@ et le secteur médico-social.
 
 - `maquette/` : maquettes du site et leurs évolutions
 - `donnees/` : jeux de données utilisés
-- `AVANCEMENT.md` : journal de bord et planning suivi au fil du projet
+- `AVANCEMENT` : journal de bord et planning suivi au fil du projet
 
 ## Difficultés et limites connues
 
