@@ -46,7 +46,7 @@ tshazly-man-tte/
 ** choix_des_données
 ** architecture/
    ** ARCHITECTURE.md        ce document
-** maquette/                   maquettes V1, V2…
+** maquette/                   maquettes.....
 ** donnees/
     *.csv                   les jeux de données (voir DICTIONNAIRE.md)
     * schema.sql              structure de la base + vues
