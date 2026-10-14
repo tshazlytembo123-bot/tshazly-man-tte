@@ -164,8 +164,7 @@ Le dépôt et le site sont publics, donc je choisis ce que je publie :
 
 Mon README indique que je travaille directement sur GitHub, sans clone local. Or un site avec un contrôleur Python a besoin d'un serveur pour tourner. J'ai deux pistes, à trancher avec les consignes du TD2 :
 
-1. GitHub Codespaces : un environnement de développement dans le navigateur. Je reste « directement sur GitHub » tout en pouvant exécuter du Python.
-2. La publication pour les employeurs : GitHub Pages ne fait tourner aucun serveur. Pour une version publique, je peux soit déployer l'application chez un hébergeur Python gratuit (j'en vérifierai les conditions le moment venu), soit écrire un script d'export qui enregistre les réponses de l'API dans des fichiers JSON statiques, que le front lirait à la place de `/api`. Je dois choisir avant S49.
+1. .......
 
 ## 12. Calendrier
 
