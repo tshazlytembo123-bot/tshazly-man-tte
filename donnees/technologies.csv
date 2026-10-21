@@ -1,0 +1,14 @@
+﻿id;nom;famille;niveau;statut
+T01;Python;Langages;;a_valider
+T02;R;Langages;;a_valider
+T03;SQL;Langages;;a_valider
+T04;JavaScript;Langages;;a_valider
+T05;HTML / CSS;Langages;;a_valider
+T06;VBA;Langages;;a_valider
+T07;pandas;Données;;a_valider
+T08;Access;Données;;a_valider
+T09;SQLite;Données;;a_valider
+T10;Chart.js;Visualisation;;a_valider
+T11;Excel / LibreOffice;Outils;;a_valider
+T12;RStudio;Outils;;a_valider
+T13;Git / GitHub;Outils;;a_valider

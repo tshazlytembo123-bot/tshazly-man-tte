@@ -1,0 +1,55 @@
+﻿code;competence_code;niveau;intitule_niveau;libelle_court;statut
+AC11.01;C1;1;Traiter des données structurées;Interpréter correctement le besoin du client;ok
+AC11.02;C1;1;Traiter des données structurées;Respecter les formalismes de notation;ok
+AC11.03;C1;1;Traiter des données structurées;Maîtriser la syntaxe des langages;ok
+AC11.04;C1;1;Traiter des données structurées;Maîtriser la structure des données exploitées;ok
+AC11.05;C1;1;Traiter des données structurées;Comprendre les structures algorithmiques de base;ok
+AC11.06;C1;1;Traiter des données structurées;Mesurer l'intérêt de la programmation;ok
+AC21.01;C1;2;Automatiser le traitement de données multidimensionnelles;Comprendre comment les données de l'entreprise sont organisées;ok
+AC21.02;C1;2;Automatiser le traitement de données multidimensionnelles;Situer le rôle de l'entrepôt de données dans la chaîne décisionnelle;ok
+AC21.03;C1;2;Automatiser le traitement de données multidimensionnelles;Intégrer des sources hétérogènes et complémentaires;ok
+AC21.04;C1;2;Automatiser le traitement de données multidimensionnelles;Tester, corriger et documenter un programme;ok
+AC21.05;C1;2;Automatiser le traitement de données multidimensionnelles;Réutiliser des briques logicielles existantes;ok
+AC31.01;C1;3;Intégrer le traitement de données complexes;Identifier les solutions de collecte et de diffusion de données;ok
+AC31.02;C1;3;Intégrer le traitement de données complexes;Comprendre les spécificités des données complexes;ok
+AC31.03;C1;3;Intégrer le traitement de données complexes;Mener une veille technologique;ok
+AC12.01;C2;1;Mettre en œuvre une analyse descriptive;Tenir compte des caractéristiques propres à chaque source;ok
+AC12.02;C2;1;Mettre en œuvre une analyse descriptive;Partir de données propres et préparées;ok
+AC12.03;C2;1;Mettre en œuvre une analyse descriptive;Décrire une variable par des synthèses numériques et graphiques;ok
+AC12.04;C2;1;Mettre en œuvre une analyse descriptive;Mettre en évidence les liaisons entre variables;ok
+AC12.05;C2;1;Mettre en œuvre une analyse descriptive;Comprendre l'intérêt d'un modèle probabiliste;ok
+AC12.06;C2;1;Mettre en œuvre une analyse descriptive;Comprendre la fluctuation d'échantillonnage par simulation;ok
+AC22.01;C2;2;Mettre en œuvre une analyse exploratoire;Distinguer modélisation statistique et analyse exploratoire;ok
+AC22.02;C2;2;Mettre en œuvre une analyse exploratoire;Saisir la spécificité des données temporelles;ok
+AC22.03;C2;2;Mettre en œuvre une analyse exploratoire;Utiliser les analyses multivariées pour résumer l'information;ok
+AC22.04;C2;2;Mettre en œuvre une analyse exploratoire;Confronter une hypothèse à la réalité pour décider;ok
+AC22.05;C2;2;Mettre en œuvre une analyse exploratoire;Apprécier les limites de validité d'une analyse;ok
+AC32.01;C2;3;Mettre en œuvre l'analyse exploratoire de données complexes;Choisir l'outil statistique le plus adapté;ok
+AC32.02;C2;3;Mettre en œuvre l'analyse exploratoire de données complexes;Adapter les méthodes à un domaine d'application;ok
+AC32.03;C2;3;Mettre en œuvre l'analyse exploratoire de données complexes;Reconnaître les limites des méthodes classiques sur données complexes;ok
+AC32.04;C2;3;Mettre en œuvre l'analyse exploratoire de données complexes;Comprendre les bases de l'apprentissage supervisé (apprentissage/test);ok
+AC13.01;C3;1;Contextualiser et présenter les données;Connaître les biais d'une enquête;ok
+AC13.02;C3;1;Contextualiser et présenter les données;Contextualiser ses données;ok
+AC13.03;C3;1;Contextualiser et présenter les données;Mettre en avant les résultats clés avec des indicateurs pertinents;ok
+AC13.04;C3;1;Contextualiser et présenter les données;Expliciter la démarche suivie lors de la restitution;ok
+AC13.05;C3;1;Contextualiser et présenter les données;Comprendre l'intérêt de la dataviz et de l'infographie;ok
+AC13.06;C3;1;Contextualiser et présenter les données;S'exprimer avec précision et nuance, en français et en langue étrangère;ok
+AC23.01;C3;2;Restituer et argumenter ses résultats;Mobiliser de façon proactive des ressources métiers;ok
+AC23.02;C3;2;Restituer et argumenter ses résultats;Défendre ses choix d'analyse;ok
+AC23.03;C3;2;Restituer et argumenter ses résultats;Choisir des indicateurs pertinents pour communiquer;ok
+AC23.04;C3;2;Restituer et argumenter ses résultats;Garder de la rigueur dans ses productions et leur communication;ok
+AC23.05;C3;2;Restituer et argumenter ses résultats;Adapter ses relations professionnelles à l'interlocuteur;ok
+AC33.01;C3;3;Intégrer et valoriser sa production dans l'écosystème de l'entreprise;Mettre les données en conformité (anonymisation, normalisation);ok
+AC33.02;C3;3;Intégrer et valoriser sa production dans l'écosystème de l'entreprise;Mesurer l'impact du droit des données;ok
+AC33.03;C3;3;Intégrer et valoriser sa production dans l'écosystème de l'entreprise;Identifier les clés d'une bonne communication;ok
+AC33.04;C3;3;Intégrer et valoriser sa production dans l'écosystème de l'entreprise;Répondre à l'ensemble des problématiques posées;ok
+AC33.05;C3;3;Intégrer et valoriser sa production dans l'écosystème de l'entreprise;Être force de proposition;ok
+AC33.06;C3;3;Intégrer et valoriser sa production dans l'écosystème de l'entreprise;Intégrer le point de vue de l'interlocuteur;ok
+AC24.01VCOD;C4;1;Développer un composant d'une solution décisionnelle;Analyser les besoins et l'existant avant de concevoir;ok
+AC24.02VCOD;C4;1;Développer un composant d'une solution décisionnelle;Percevoir les enjeux d'automatisation et d'interopérabilité;ok
+AC24.03VCOD;C4;1;Développer un composant d'une solution décisionnelle;Choisir les outils et langages les plus adaptés;ok
+AC24.04VCOD;C4;1;Développer un composant d'une solution décisionnelle;Comprendre le cycle de vie d'un projet informatique;ok
+AC34.01VCOD;C4;2;Participer au déploiement d'une solution décisionnelle;Utiliser des moyens adaptés pour le Big Data et les flux de données;ok
+AC34.02VCOD;C4;2;Participer au déploiement d'une solution décisionnelle;Défendre ses choix de solution par un argumentaire éclairé;ok
+AC34.03VCOD;C4;2;Participer au déploiement d'une solution décisionnelle;Appliquer des méthodes de développement dans un projet;ok
+AC34.04VCOD;C4;2;Participer au déploiement d'une solution décisionnelle;Utiliser un gestionnaire de versions de code;ok

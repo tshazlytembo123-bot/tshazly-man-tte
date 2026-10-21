@@ -1,0 +1,79 @@
+﻿code;semestre_id;type;intitule;competence_code;heures;statut
+SAE1.01;S1;sae;Reporting à partir de données stockées dans un SGBD relationnel;C1;;a_valider
+SAE1.02;S1;sae;Écriture et lecture de fichiers de données;C1;;a_valider
+SAE1.03;S1;sae;Préparation et synthèse d'un tableau de données en vue d'une analyse exploratoire simple;C2;;a_valider
+SAE1.04;S1;sae;Apprendre en situation la production de données en entreprise;C3;;a_valider
+SAE1.05;S1;sae;Présentation en anglais d'un territoire économique et culturel;C3;;a_valider
+SAE1.06;S1;sae;Mise en œuvre d'une enquête;C3;;a_valider
+R1.01;S1;ressource;Tableur et reporting;C1;20;ok
+R1.02;S1;ressource;Bases de données relationnelles 1;C1;30;ok
+R1.03;S1;ressource;Bases de la programmation 1;C1;30;ok
+R1.04;S1;ressource;Statistique descriptive 1;C2;45;ok
+R1.05;S1;ressource;Probabilités 1;C2;30;ok
+R1.06;S1;ressource;Mathématiques - analyse;C2;30;ok
+R1.07;S1;ressource;Initiation à l'anglais de spécialité;C3;30;ok
+R1.08;S1;ressource;Communication de l'information et recherche documentaire;C3;30;ok
+R1.09;S1;ressource;Découverte des données de l'environnement entrepreneurial et économique;C3;45;ok
+R1.10;S1;ressource;Projet Personnel et Professionnel 1;;10;ok
+SAE2.01;S2;sae;Conception et implémentation d'une base de données;C1;;a_valider
+SAE2.02;S2;sae;Estimation par échantillonnage;C2;;a_valider
+SAE2.03;S2;sae;Régression sur données réelles;C2;;a_valider
+SAE2.04;S2;sae;Datavisualisation;;;a_valider
+SAE2.05;S2;sae;Construction et présentation d'indicateurs de performance;;;a_valider
+SAE2.06;S2;sae;Analyse de données, reporting et datavisualisation;;;a_valider
+R2.01;S2;ressource;Reporting et Datavisualisation;;;a_valider
+R2.02;S2;ressource;Bases de données relationnelles 2;;;a_valider
+R2.03;S2;ressource;Bases de la programmation 2;;;a_valider
+R2.04;S2;ressource;Programmation statistique;;;a_valider
+R2.05;S2;ressource;Statistique descriptive 2;;;a_valider
+R2.06;S2;ressource;Probabilités 2;;;a_valider
+R2.07;S2;ressource;Bases de l'algèbre;;;a_valider
+R2.08;S2;ressource;Statistique inférentielle;;;a_valider
+R2.09;S2;ressource;Approfondissement de l'anglais de spécialité;;;a_valider
+R2.10;S2;ressource;Communication et sémiologie;;;a_valider
+R2.11;S2;ressource;Étude des données de l'environnement entrepreneurial et économique;;;a_valider
+R2.12;S2;ressource;Projet Personnel et Professionnel 2;;;a_valider
+SAE3.VCOD.01;S3;sae;Collecte automatisée de données web;;;a_valider
+SAE3.02;S3;sae;Intégration de données dans un datawarehouse;;;a_valider
+SAE3.03;S3;sae;Description et prévision de données temporelles;;;a_valider
+SAE3.VCOD.04;S3;sae;Conformité réglementaire pour traiter des données;;;a_valider
+R3.01;S3;ressource;Utilisation avancée d'outils de reporting;;;a_valider
+R3.02;S3;ressource;Systèmes d'information décisionnels;;;a_valider
+R3.03;S3;ressource;Technologies web;;;a_valider
+R3.04;S3;ressource;Programmation statistique automatisée;;;a_valider
+R3.05;S3;ressource;Algèbre linéaire;;;a_valider
+R3.06;S3;ressource;Tests d'hypothèses pour l'analyse bi-variée;;;a_valider
+R3.07;S3;ressource;Anglais professionnel;;;a_valider
+R3.08;S3;ressource;Communication organisationnelle et professionnelle;;;a_valider
+R3.09;S3;ressource;Les données de l'environnement entrepreneurial et économique pour l'aide à la décision;;;a_valider
+R3.VCOD.10;S3;ressource;Programmation objet;;;a_valider
+R3.VCOD.11;S3;ressource;Projet Personnel et Professionnel 3;;;a_valider
+SAE4.VCOD.01;S4;sae;Développement d'un composant d'une solution décisionnelle;;;a_valider
+SAE4.02;S4;sae;Reporting d'une analyse multivariée;;;a_valider
+STAGE4;S4;stage;Stage;;;a_valider
+R4.01;S4;ressource;Automatisation et test en programmation;;;a_valider
+R4.02;S4;ressource;Méthodes factorielles;;;a_valider
+R4.03;S4;ressource;Classification automatique;;;a_valider
+R4.04;S4;ressource;Anglais scientifique et argumentation;;;a_valider
+R4.05;S4;ressource;Communication scientifique et argumentation;;;a_valider
+R4.06;S4;ressource;Exploration et valorisation de la donnée dans un cadre juridique et économique;;;a_valider
+R4.07;S4;ressource;Projet Personnel et Professionnel 4;;;a_valider
+R4.VCOD.08;S4;ressource;Préparation/Intégration de données;;;a_valider
+R4.VCOD.09;S4;ressource;Programmation web;;;a_valider
+SAE5.VCOD.01;S5;sae;Analyse et conception d'un outil décisionnel;;;a_valider
+SAE5.02;S5;sae;Migration de données vers ou depuis un environnement NoSQL;;;a_valider
+SAE5.03;S5;sae;Mise en œuvre d'un processus de Datamining;;;a_valider
+R5.01;S5;ressource;Bases de données NoSQL;;;a_valider
+R5.02;S5;ressource;Data mining;;;a_valider
+R5.03;S5;ressource;Anglais pour la coopération internationale et enjeux internationaux des données;;;a_valider
+R5.04;S5;ressource;Communication des données, éthique et responsabilité;;;a_valider
+R5.05;S5;ressource;Projet Personnel et Professionnel 5;;;a_valider
+R5.VCOD.06;S5;ressource;Développement logiciel;;;a_valider
+R5.VCOD.07;S5;ressource;Programmation web pour la visualisation;;;a_valider
+SAE6.VCOD.01;S6;sae;Développement et test d'un outil décisionnel;;;a_valider
+STAGE6;S6;stage;Stage;;;a_valider
+R6.01;S6;ressource;Big Data : enjeux, stockage et extraction;;;a_valider
+R6.02;S6;ressource;Méthodes statistiques pour le Big Data;;;a_valider
+R6.03;S6;ressource;Anglais pour la communication d'entreprise;;;a_valider
+R6.04;S6;ressource;Communication pour le management;;;a_valider
+R6.VCOD.05;S6;ressource;Approfondissement en Big Data;;;a_valider
