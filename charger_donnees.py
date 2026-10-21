@@ -67,7 +67,7 @@ def statut_ok(nom, ligne):
 
 def charger():
     t = {}
-    # --- tables de référence -------------------------------------------------
+   
     t["competences"] = lire("competences.csv")
     codes_comp = {l["code"] for l in t["competences"]}
     t["apprentissages_critiques"] = lire("apprentissages_critiques.csv")
@@ -82,7 +82,7 @@ def charger():
         if l["statut_validation"] not in valeurs_validation:
             err("semestres.csv", l, f"statut_validation invalide : {l['statut_validation']!r}")
 
-    # --- modules -------------------------------------------------------------
+
     t["modules"] = lire("modules.csv")
     codes_mod, vus = set(), set()
     for l in t["modules"]:
@@ -105,7 +105,7 @@ def charger():
         if nat is not None and total > nat:
             err("semestres.csv", s, f"{s['id']} : {total} h saisies dans modules.csv > {nat} h nationales")
 
-    # --- notes ---------------------------------------------------------------
+    
     t["notes"] = []
     ids = set()
     for l in lire("notes.csv"):
@@ -122,7 +122,7 @@ def charger():
                 err("notes.csv", l, "statut 'ok'/'a_valider' mais note ou coefficient manquant")
         t["notes"].append(l)
 
-    # --- technologies --------------------------------------------------------
+ 
     t["technologies"] = lire("technologies.csv")
     ids_tech = set()
     for l in t["technologies"]:
@@ -132,7 +132,7 @@ def charger():
             err("technologies.csv", l, f"famille invalide : {l['famille']!r}")
         l["niveau"] = nombre(l["niveau"], "technologies.csv", l, "niveau", 1, 5, entier=True)
 
-    # --- projets -------------------------------------------------------------
+
     t["projets"] = lire("projets.csv")
     ids_proj = set()
     for l in t["projets"]:
@@ -147,7 +147,7 @@ def charger():
         if l["technologie_id"] not in ids_tech:
             err("projets_technologies.csv", l, f"technologie inconnue : {l['technologie_id']}")
 
-    # --- documents -----------------------------------------------------------
+ 
     t["documents"] = lire("documents.csv")
     for l in t["documents"]:
         s = statut_ok("documents.csv", l)
