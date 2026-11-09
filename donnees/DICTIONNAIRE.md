@@ -18,7 +18,7 @@ Tous les fichiers sont en **CSV, séparateur point-virgule, encodage UTF-8**. Ce
 | `apprentissages_critiques.csv` | 54 apprentissages critiques par compétence et niveau | même programme, libellés raccourcis et reformulés | complet |
 | `semestres.csv` | S1 à S6 : année, volumes nationaux, semaines de stage, validation | même programme + ma situation | volumes complets ; **statut de validation et moyennes à saisir** |
 | `modules.csv` | catalogue des ressources, SAÉ et stages de S1 à S6 | même programme | codes et intitulés complets ; **compétence et heures complètes pour S1 seulement** |
-| `notes.csv` | une ligne par évaluation | mes relevés de notes | **modèle prérempli (S1 à S4), notes à saisir** |
+| `notes.csv` | une ligne par évaluation | mes relevés de notes | **modèle prérempli (S1 à S4, une ligne par module), notes à saisir ; S5 et S6 à ajouter au fil de l'eau** |
 | `technologies.csv` | outils et langages affichés dans les cartes | mes cours et mes projets | liste à valider, **niveaux à définir** |
 | `projets.csv` | projets affichés dans la section Projets | saisie manuelle | 1 projet complet, 1 à valider |
 | `projets_technologies.csv` | lien projet ↔ technologie | saisie manuelle | cohérent avec `projets.csv` |
@@ -97,7 +97,7 @@ Pour ajouter une évaluation : copier une ligne, changer l'`id` et le `libelle_e
 | `categorie` | texte | `Académique`, `Personnel`, `Santé & secteur public` |
 | `objectif`, `donnees_utilisees`, `difficultes` | texte | fenêtre de détail |
 | `lien_code` | texte | URL du dépôt GitHub du projet |
-| `visuel` | texte | chemin d'une image dans `app/static/img/` |
+| `visuel` | texte | chemin d'une image dans `html_site_web/img/` |
 
 ### projets_technologies
 `projet_id` et `technologie_id` : une ligne par outil utilisé dans un projet.

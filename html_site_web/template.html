@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tshazly · Data Scientist · BUT Science des Données</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1b2430;--mut:#5d6b7c;--ac:#0f766e;--ac2:#e8f3f2;--bd:#d9dee5;--bar:#14b8a6}
+@media (prefers-color-scheme:dark){:root{--bg:#10161d;--card:#18212b;--tx:#e8edf2;--mut:#9aa8b8;--ac:#2dd4bf;--ac2:#14302e;--bd:#2b3846;--bar:#2dd4bf}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+nav{position:sticky;top:0;z-index:9;display:flex;gap:6px;align-items:center;padding:12px 5vw;background:var(--card);border-bottom:1px solid var(--bd);overflow-x:auto}
+nav b{margin-right:auto;letter-spacing:.08em}nav a{color:var(--mut);text-decoration:none;padding:4px 10px;border-bottom:2px solid transparent;white-space:nowrap}
+nav a.on{color:var(--tx);border-color:var(--ac);font-weight:600}
+section{padding:56px 5vw;max-width:1100px;margin:auto}h2{margin:0 0 20px;font-size:1.6rem}h3{margin:24px 0 10px}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
+.badge{display:inline-block;border:1px solid var(--ac);color:var(--ac);padding:3px 10px;font-size:.85rem;border-radius:4px}
+h1{font-size:clamp(2.2rem,6vw,3.4rem);margin:14px 0 4px}.mut{color:var(--mut)}
+.btn{display:inline-block;padding:10px 18px;border:2px solid var(--ac);border-radius:6px;text-decoration:none;font-weight:600;color:var(--ac);background:none;cursor:pointer;font-size:1rem}
+.btn.p{background:var(--ac);color:var(--bg)}.btn[aria-disabled=true]{opacity:.4;pointer-events:none}
+.photo{aspect-ratio:1;border:1px solid var(--bd);border-radius:8px;display:grid;place-items:center;background:var(--ac2);color:var(--mut);overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:16px}
+.kpi{text-align:center}.kpi b{display:block;font-size:2rem;color:var(--ac)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid var(--bd);border-radius:4px;padding:3px 10px;font-size:.88rem;background:var(--card)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.filters button,select{font:inherit;padding:6px 14px;border:1px solid var(--bd);border-radius:20px;background:var(--card);color:var(--tx);cursor:pointer}
+.filters button.on{background:var(--ac);color:var(--bg);border-color:var(--ac)}
+.lvl{height:8px;background:var(--bd);border-radius:4px;margin:8px 0}.lvl i{display:block;height:100%;background:var(--bar);border-radius:4px}
+.two{display:grid;grid-template-columns:1fr 1.4fr;gap:20px}.two .card ul{margin:0;padding-left:18px}
+.cv{position:relative;height:280px}.empty{color:var(--mut);font-style:italic;padding:20px 0;text-align:center}
+.proj{cursor:pointer}.proj:hover{border-color:var(--ac)}.proj .vis{height:110px;border-radius:6px;background:var(--ac2);margin-bottom:10px;display:grid;place-items:center;color:var(--mut);font-size:.8rem;overflow:hidden}.proj .vis img{width:100%;height:100%;object-fit:cover}
+dialog{max-width:560px;width:92%;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx)}dialog::backdrop{background:#0008}
+.docs{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}.doc{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px;border:1px solid var(--bd);border-radius:6px;margin-bottom:8px;cursor:pointer;background:var(--card)}.doc.on{border-color:var(--ac)}
+iframe{width:100%;height:420px;border:1px solid var(--bd);border-radius:6px;background:#fff}
+footer{text-align:center;padding:28px;border-top:1px solid var(--bd);background:var(--card);color:var(--mut)}footer a{color:var(--ac)}
+@media(max-width:760px){.hero,.two,.docs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><b>TSHAZLY</b>
+<a href="#accueil">Accueil</a><a href="#competences">Compétences</a><a href="#but-sd">BUT SD</a><a href="#notes">Notes</a><a href="#projets">Projets</a><a href="#documents">Documents</a></nav>
+
+<section id="accueil">
+ <div class="hero"><div>
+  <span class="badge">BUT Science des Données · parcours VCOD · 21 ans</span>
+  <h1>Data Scientist</h1>
+  <p class="mut" style="font-size:1.15rem">Données publiques · secteur médico-social et social</p>
+  <p>Étudiant &amp; gestionnaire en data, joueur amateur du football français. N’hésitez pas à me laisser un message : je reste à l’écoute de nouvelles opportunités professionnelles.</p>
+  <p><a class="btn p" href="#projets">Voir mes projets</a> <a class="btn" href="#documents">CV &amp; Documents</a></p>
+ </div><div class="photo"><img src="img/photo.jpg" alt="Photo professionnelle de Tshazly" onerror="this.replaceWith('Photo professionnelle')"></div></div>
+ <div class="grid" style="margin-top:36px" id="kpi-accueil"></div>
+ <h3>Technologies</h3><div class="chips" id="bandeau"></div>
+</section>
+
+<section id="competences">
+ <h2>Compétences techniques</h2>
+ <div class="filters" id="f-fam"></div><div class="grid" id="techs"></div>
+</section>
+
+<section id="but-sd">
+ <h2>BUT Science des Données · 4 compétences</h2>
+ <div class="two"><div class="filters" id="f-comp" style="flex-direction:column;align-items:stretch;border-radius:0"></div><div class="card" id="ac"></div></div>
+ <h3>Volume horaire par compétence</h3>
+ <div class="filters" id="f-an"></div><div class="card"><div class="cv"><canvas id="c-vol"></canvas></div><div class="empty" id="e-vol" hidden></div></div>
+</section>
+
+<section id="notes">
+ <h2>Résultats académiques</h2>
+ <div class="grid" id="kpi-notes"></div>
+ <div class="filters" id="f-sem" style="margin-top:16px"></div>
+ <p><label>Module : <select id="s-mod"></select></label></p>
+ <div class="empty" id="e-notes" hidden></div>
+ <div class="two" style="grid-template-columns:1fr 1fr">
+  <div class="card"><b>Progression : moyenne par semestre</b><div class="cv"><canvas id="c-prog"></canvas></div></div>
+  <div class="card"><b>Distribution des notes</b><div class="cv"><canvas id="c-dist"></canvas></div></div>
+ </div>
+ <div class="card" style="margin-top:20px"><b>Notes par module</b><div class="cv"><canvas id="c-mod"></canvas></div></div>
+</section>
+
+<section id="projets">
+ <h2>Projets académiques &amp; personnels</h2>
+ <div class="filters" id="f-cat"></div><div class="grid" id="projs" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))"></div>
+ <dialog id="dlg"></dialog>
+</section>
+
+<section id="documents">
+ <h2>CV &amp; documents importants</h2>
+ <div class="filters" id="f-type"></div>
+ <div class="docs"><div id="doclist"></div><div><b>Aperçu du document</b><iframe id="prev" title="Aperçu du document"></iframe></div></div>
+ <h3>Contact</h3><div class="grid" id="contact"></div>
+</section>
+
+<footer><a id="l-mail"></a> · <a id="l-in" target="_blank" rel="noopener">LinkedIn</a> · <a id="l-gh" target="_blank" rel="noopener">GitHub</a> | © 2026 Tshazly</footer>
+
+<script>
+const D=/*DATA*/null;
+const $=s=>document.querySelector(s),mk=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const num=v=>v==null?null:+v;
+const avg=a=>{const w=a.reduce((s,n)=>s+n.coefficient,0);return w?a.reduce((s,n)=>s+n.note*n.coefficient,0)/w:null};
+const f1=v=>v==null?'—':(Math.round(v*100)/100).toLocaleString('fr-FR');
+const sem=Object.fromEntries(D.semestres.map(s=>[s.id,s])),mod=Object.fromEntries(D.modules.map(m=>[m.code,m]));
+const notes=D.notes.filter(n=>n.note!=null&&mod[n.module_code]).map(n=>({...n,semestre:mod[n.module_code].semestre_id,module:mod[n.module_code].intitule}));
+const charts={};
+function draw(id,cfg){if(charts[id])charts[id].destroy();if(typeof Chart==='undefined')return;
+ cfg.options={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},...cfg.options};charts[id]=new Chart($('#'+id),cfg)}
+function pills(box,vals,cur,cb){box.replaceChildren(...vals.map(([k,l])=>{const b=mk('button',k===cur?'on':'',l);b.onclick=()=>{cb(k)};return b}))}
+
+/* Accueil */
+(function(){const h=D.modules.filter(m=>sem[m.semestre_id].statut_validation==='valide').reduce((s,m)=>s+(m.heures||0),0),nv=D.semestres.filter(s=>s.statut_validation==='valide').length,mg=avg(notes);
+ [[h||'—','Heures de formation'],[f1(mg),'Moyenne générale'],[D.projets.length,'Projets réalisés'],[nv||'—','Semestres validés']].forEach(([v,l])=>{const c=mk('div','card kpi');c.append(mk('b','',v),mk('span','mut',l));$('#kpi-accueil').append(c)});
+ D.technologies.forEach(t=>$('#bandeau').append(mk('span','chip',t.nom)))})();
+
+/* Compétences : technologies */
+let fam='Toutes';
+function techs(){pills($('#f-fam'),['Toutes','Langages','Données','Visualisation','Outils'].map(x=>[x,x]),fam,v=>{fam=v;techs()});
+ $('#techs').replaceChildren(...D.technologies.filter(t=>fam==='Toutes'||t.famille===fam).map(t=>{const c=mk('div','card');c.append(mk('b','',t.nom),mk('div','mut',t.famille));
+  const l=mk('div','lvl');if(t.niveau){l.innerHTML='<i style="width:'+t.niveau*20+'%"></i>';c.append(l,mk('div','',t.niveau+'/5'))}else c.append(mk('div','mut','Niveau à définir'));
+  const p=D.projets_technologies.filter(x=>x.technologie_id===t.id).map(x=>(D.projets.find(q=>q.id===x.projet_id)||{}).titre).filter(Boolean);
+  c.append(mk('div','mut',p.length?'Projets : '+p.join(' · '):'Aucun projet lié'));return c}))}
+techs();
+
+/* BUT SD */
+let comp=D.competences[0].code,an='Toutes';
+function ac(){pills($('#f-comp'),D.competences.map(c=>[c.code,c.code+' · '+c.nom_court]),comp,v=>{comp=v;ac()});
+ const c=D.competences.find(x=>x.code===comp),b=$('#ac');b.replaceChildren(mk('h3','',c.intitule),mk('p','mut',c.description_courte));
+ [...new Set(D.apprentissages.filter(a=>a.competence_code===comp).map(a=>a.niveau))].forEach(n=>{const L=D.apprentissages.filter(a=>a.competence_code===comp&&a.niveau===n);
+  b.append(mk('b','','Niveau '+n+' · '+L[0].intitule_niveau));const u=mk('ul');L.forEach(a=>u.append(mk('li','',a.code+' · '+a.libelle_court)));b.append(u)})}
+ac();
+function vol(){pills($('#f-an'),[['Toutes','Toutes'],['1','BUT 1'],['2','BUT 2'],['3','BUT 3']],an,v=>{an=v;vol()});
+ const S={};D.modules.filter(m=>m.heures!=null&&(an==='Toutes'||String(sem[m.semestre_id].annee_but)===an)).forEach(m=>{const k=m.competence_code||'Transversal';S[k]=(S[k]||0)+m.heures});
+ const k=Object.keys(S).sort();$('#e-vol').hidden=k.length>0;$('#e-vol').textContent='Volumes horaires à compléter dans donnees/modules.csv pour cette année.';
+ draw('c-vol',{type:'bar',data:{labels:k,datasets:[{label:'Heures',data:k.map(x=>S[x]),backgroundColor:getComputedStyle(document.body).getPropertyValue('--bar')||'#14b8a6'}]},options:{scales:{y:{beginAtZero:true,title:{display:true,text:'Heures'}}}}})}
+vol();
+
+/* Notes */
+let fs='Tous',fm='';
+function nts(){pills($('#f-sem'),['Tous','S1','S2','S3','S4','S5','S6'].map(x=>[x,x]),fs,v=>{fs=v;fm='';nts()});
+ const base=notes.filter(n=>fs==='Tous'||n.semestre===fs),sel=$('#s-mod');
+ sel.replaceChildren(new Option('Tous les modules',''),...[...new Set(base.map(n=>n.module_code))].map(c=>new Option(c+' · '+mod[c].intitule,c)));sel.value=fm;sel.onchange=()=>{fm=sel.value;nts()};
+ const L=base.filter(n=>!fm||n.module_code===fm),k=$('#kpi-notes');k.replaceChildren();
+ [[f1(avg(L)),'Moyenne générale'],[L.length?f1(Math.max(...L.map(n=>n.note))):'—','Meilleure note'],[L.length?f1(Math.min(...L.map(n=>n.note))):'—','Note la plus faible'],[L.length,'Évaluations']].forEach(([v,l])=>{const c=mk('div','card kpi');c.append(mk('b','',v),mk('span','mut',l));k.append(c)});
+ $('#e-notes').hidden=notes.length>0;$('#e-notes').textContent='Aucune note publiée pour le moment : à saisir dans donnees/notes.csv (statut « ok »). La courbe utilise les moyennes officielles des semestres déjà renseignées.';
+ const P=D.semestres.map(s=>[s.id,avg(notes.filter(n=>n.semestre===s.id))??num(s.moyenne_officielle)]).filter(x=>x[1]!=null);
+ draw('c-prog',{type:'line',data:{labels:P.map(x=>x[0]),datasets:[{data:P.map(x=>x[1]),borderColor:'#14b8a6',tension:.25}]},options:{scales:{y:{min:0,max:20}}}});
+ const T=['<8','8-10','10-12','12-14','>14'],cnt=T.map(()=>0);L.forEach(n=>cnt[n.note<8?0:n.note<10?1:n.note<12?2:n.note<14?3:4]++);
+ draw('c-dist',{type:'bar',data:{labels:T,datasets:[{data:cnt,backgroundColor:'#14b8a6'}]},options:{scales:{y:{beginAtZero:true,ticks:{precision:0}}}}});
+ const M=[...new Set(L.map(n=>n.module_code))].map(c=>[c,avg(L.filter(n=>n.module_code===c))]);
+ draw('c-mod',{type:'bar',data:{labels:M.map(x=>x[0]),datasets:[{label:'Note',data:M.map(x=>x[1]),backgroundColor:'#14b8a6'}]},options:{scales:{y:{min:0,max:20}}}})}
+nts();
+
+/* Projets */
+let cat='Tous';
+const tn=id=>D.projets_technologies.filter(x=>x.projet_id===id).map(x=>(D.technologies.find(t=>t.id===x.technologie_id)||{}).nom).filter(Boolean);
+function projs(){pills($('#f-cat'),['Tous','Académique','Personnel','Santé & secteur public'].map(x=>[x,x]),cat,v=>{cat=v;projs()});
+ const L=D.projets.filter(p=>cat==='Tous'||p.categorie===cat);
+ $('#projs').replaceChildren(...(L.length?L:[null]).map(p=>{if(!p)return mk('div','empty','Aucun projet dans cette catégorie pour le moment.');
+  const c=mk('div','card proj'),v=mk('div','vis');if(p.visuel){const i=mk('img');i.src=p.visuel;i.alt='';v.append(i)}else v.textContent='VISUALISATION';
+  const ch=mk('div','chips');tn(p.id).forEach(t=>ch.append(mk('span','chip',t)));
+  c.append(v,mk('b','',p.titre),mk('p','mut',p.description||''),ch);
+  if(p.lien_code){const a=mk('a','btn','Code');a.href=p.lien_code;a.target='_blank';a.rel='noopener';a.style.marginTop='10px';a.onclick=e=>e.stopPropagation();c.append(a)}
+  c.onclick=()=>detail(p);return c}))}
+function detail(p){const d=$('#dlg');d.replaceChildren(mk('h3','',p.titre),mk('span','badge',p.categorie));
+ [['Objectif',p.objectif],['Données',p.donnees_utilisees],['Outils',tn(p.id).join(', ')],['Difficultés rencontrées',p.difficultes]].forEach(([k,v])=>{d.append(mk('b','',k),mk('p','mut',v||'À compléter dans donnees/projets.csv'))});
+ const b=mk('button','btn','Fermer');b.onclick=()=>d.close();d.append(b);d.showModal()}
+projs();
+
+/* Documents */
+let ty='Tous',cur=null;
+function docs(){pills($('#f-type'),['Tous','CV','Attestations','Rapports'].map(x=>[x,x]),ty,v=>{ty=v;docs()});
+ const L=D.documents.filter(d=>ty==='Tous'||d.type===ty),box=$('#doclist');box.replaceChildren();
+ if(!L.length)box.append(mk('div','empty','Aucun document de ce type.'));
+ L.forEach(d=>{const r=mk('div','doc'+(cur===d.id?' on':'')),t=mk('div');t.append(mk('b','',d.titre),mk('div','mut',d.type+(d.date?' · '+d.date:'')));
+  const ok=d.statut!=='a_completer',a=mk('a','btn',ok?'Télécharger':'À venir');if(ok){a.href='../'+d.fichier;a.download='';a.onclick=e=>e.stopPropagation()}else a.setAttribute('aria-disabled','true');
+  r.append(t,a);r.onclick=()=>{if(ok){cur=d.id;$('#prev').src='../'+d.fichier;docs()}};box.append(r)})}
+docs();
+const c=D.contact;$('#l-mail').href='mailto:'+c.email;$('#l-mail').textContent='Email';$('#l-in').href=c.linkedin;$('#l-gh').href=c.github;
+[['Email',c.email,'mailto:'+c.email],['LinkedIn',c.linkedin,c.linkedin],['GitHub',c.github,c.github]].forEach(([n,t,h])=>{const k=mk('a','card',n);k.href=h;k.style.cssText='text-decoration:none;color:inherit;font-weight:600';if(n!=='Email')k.target='_blank';$('#contact').append(k)});
+
+/* Menu : section active */
+const links=[...document.querySelectorAll('nav a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>

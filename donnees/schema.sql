@@ -1,5 +1,3 @@
-
-
 CREATE TABLE competences (
   code              TEXT PRIMARY KEY,               -- C1 à C4
   nom_court         TEXT NOT NULL,
@@ -65,9 +63,9 @@ CREATE TABLE projets (
   visuel            TEXT
 );
 
-CREATE TABLE projets_professionnel (
+CREATE TABLE projets_technologies (
   projet_id         TEXT NOT NULL REFERENCES projets(id),
-  professionnel_id    TEXT NOT NULL REFERENCES professionnel(id),
+  technologie_id    TEXT NOT NULL REFERENCES technologies(id),
   PRIMARY KEY (projet_id, technologie_id)
 );
 
