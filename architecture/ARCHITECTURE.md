@@ -67,7 +67,7 @@ erDiagram
   competences ||--o{ apprentissages_critiques : "détaille"
   competences ||--o{ modules : "cible"
   semestres ||--o{ modules : "contient"
-  modules ||--o{ notes : "reçoit"
+  modules ||--o{ Resultat sous graphes : "reçoit"
   projets ||--o{semestres : "cible"
   projets }o--o{ technologies : "utilise (projets_technologies)"
 ```
