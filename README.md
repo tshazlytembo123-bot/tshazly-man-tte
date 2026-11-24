@@ -55,7 +55,8 @@ python -m http.server 8000          # puis ouvrir http://localhost:8000/html_sit
 ## Difficultés et limites connues
 
 - Le temps de travail et la construction de ma maquette, qui change tout le temps.
-- Notes, statuts de validation et niveaux des technologies restent à saisir (voir `donnees/DICTIONNAIRE.md`) : les graphiques correspondants sont vides tant que ce n'est pas fait.
+- changement frequement dans mes dossiers et donc je supprime et je remplace par un autre qui est correcte
+- resulats, statuts de validation et niveaux des technologies restent à saisir (voir `donnees/DICTIONNAIRE.md`) : les graphiques correspondants sont vides tant que ce n'est pas fait.
 
 ## Contact
 
