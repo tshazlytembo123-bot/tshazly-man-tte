@@ -68,7 +68,7 @@ erDiagram
   competences ||--o{ modules : "cible"
   semestres ||--o{ modules : "contient"
   modules ||--o{ notes : "reçoit"
-  projets ||--o{competences : "cible"
+  projets ||--o{semestres : "cible"
   projets }o--o{ technologies : "utilise (projets_technologies)"
 ```
 
