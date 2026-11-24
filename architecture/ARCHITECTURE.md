@@ -24,7 +24,7 @@ Je ne connais pas encore la  technique imposée au TD2, notamment le langage . E
 
 ```mermaid
 flowchart LR
-  CSV["donnees/*.csv<br/>(je les édite)"] -->|scripts/charger_donnees.py<br/>validation + chargement| DB[("SQLite<br/>data/portfolio.db")]
+  CSV["donnees/*.csv<br/>(fichiers)"] -->|scripts/charger_donnees.py<br/>validation + chargement| DB[("SQLite<br/>data/portfolio.db")]
   DB --> M["Modèles<br/>requêtes SQL"]
   M --> C["Contrôleurs<br/>routes /api/..."]
   C -->|JSON| V["Vue<br/>index.html + JS + Chart.js"]
