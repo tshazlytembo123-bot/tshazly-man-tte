@@ -66,10 +66,11 @@ J'ai neuf tables, décrites colonne par colonne dans `donnees/DICTIONNAIRE.md` e
 erDiagram
   competences ||--o{ apprentissages_critiques : "détaille"
   competences ||--o{ modules : "cible"
-
+  apprentissages_critiques ||--o{ modules : "cible"
   projets ||--o{semestres : "cible"
   projets }o--o{ technologies : "utilise (projets_technologies)"
-
+  semestres ||--o{ modules : "contient"
+  modules ||--o{ Resultat  : "reçoit"
 ```
 
 Les tables `documents` et `technologies` (hors liaison avec les projets) sont indépendantes des autres.
