@@ -193,3 +193,4 @@ INSERT INTO APPRENTISSAGE_CRITIQUE (id_ac, intitule, id_annee) VALUES
 ('AC34.04VCOD', 'Apprécier l’intérêt de l’utilisation d’un gestionnaire de versions de code', 'BUT3')
 ON CONFLICT DO NOTHING;
 
+    
