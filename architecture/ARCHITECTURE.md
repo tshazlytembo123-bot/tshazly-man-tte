@@ -70,7 +70,7 @@ erDiagram
   projets ||--o{modules : "cible"
   projets }o--o{ externe : "utilise (projets_technologies)"
   semestres ||--o{ modules : "contient"
-  modules ||--o{ Resultat  : "reçoit"
+  Competences ||--o{ Resultat  : "reçoit"
 ```
 
 Les tables `documents` et `technologies` (hors liaison avec les projets) sont indépendantes des autres.
