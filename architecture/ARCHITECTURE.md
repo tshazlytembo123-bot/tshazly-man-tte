@@ -81,7 +81,7 @@ J'ai fait deux choix pour ne pas stocker la même information deux fois :
 ## 6. Les routes de l'API
 
 | Section de la maquette | Route | Paramètres | Contenu renvoyé |
-|---|---|---|---|
+
 | Accueil | `GET /api/accueil` | aucun | 4 compteurs (`v_kpi_accueil`) et la liste des technologies |
 | Compétences | `GET /api/technologies` | `famille` (Toutes, Langages, Données, Visualisation, Outils) | cartes : nom, niveau, projets liés |
 | BUT SD | `GET /api/competences` | aucun | les 4 compétences |
@@ -118,7 +118,7 @@ Les valeurs des filtres passent toujours par des paramètres liés (`:semestre`)
 ## 7. Le front : un module JavaScript par section
 
 | Section | Fichier JS | Appelle | Visualisation / interaction |
-|---|---|---|---|
+
 | Menu fixe | `menu.js` | aucune route | ancres, entrée active mise à jour au défilement |
 | Accueil | `accueil.js` | `/api/accueil` | 4 compteurs, boutons vers Projets et Documents |
 | Compétences et BUT SD | `competences.js` | `/api/technologies`, `/api/competences/<code>`, `/api/volume-horaire` | filtre de famille, sélecteur de compétence, barres par compétence avec filtre BUT 1/2/3 |
