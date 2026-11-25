@@ -1,4 +1,4 @@
-# Projet de programmation web – Site de présentation de mes compétences
+# Projet de programmation web 
 
 _Tshazly · BUT Science des Données (parcours VCOD) · IUT Besançon-Vesoul, site de Dole_
 
