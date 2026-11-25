@@ -37,9 +37,9 @@ Prérequis : Node.js 18 ou plus et un serveur PostgreSQL local qui tourne (utili
 ```bash
 git clone https://github.com/tshazlytembo123-bot/tshazly-man-tte.git
 cd tshazly-man-tte
-npm install          # une seule fois
-npm run init         # crée la base « butsd », les tables, les vues et les données
-npm start            # puis ouvrir http://localhost:3000
+npm install          
+npm run init         
+npm start            
 ```
 
 - Si l'utilisateur ou le mot de passe de PostgreSQL ne sont pas ceux par défaut, les régler avant `npm run init` et `npm start` avec les variables `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT` ou `DATABASE_URL` (voir `.env.example`).
