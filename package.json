@@ -1,0 +1,21 @@
+{
+  "name": "tshazly-man-tte",
+  "version": "1.0.0",
+  "description": "Site de présentation de mes compétences : BUT Science des Données (Node.js, Express, PostgreSQL, Chart.js)",
+  "type": "module",
+  "main": "serveur/server.js",
+  "scripts": {
+    "start": "node serveur/server.js",
+    "dev": "node --watch serveur/server.js",
+    "init": "node serveur/server.js --init"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}

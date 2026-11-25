@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heures par compétence · BUT Science des Données</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1b2430;--mut:#5d6b7c;--ac:#0f766e;--ac2:#e8f3f2;--bd:#d9dee5;--sel:#fff3c4}
+@media (prefers-color-scheme:dark){:root{--bg:#10161d;--card:#18212b;--tx:#e8edf2;--mut:#9aa8b8;--ac:#2dd4bf;--ac2:#14302e;--bd:#2b3846;--sel:#4a3f12}}
+*{box-sizing:border-box}
+body{margin:0;padding:2rem 5vw;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1100px;margin:auto}
+a{color:var(--ac)}
+h1{margin:.5rem 0 1rem}
+.bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1rem}
+.bar .groupe{display:flex;gap:.4rem;flex-wrap:wrap}
+button{font:inherit;padding:.5rem 1rem;border:1px solid var(--bd);border-radius:20px;background:var(--card);color:var(--tx);cursor:pointer}
+button.active{background:var(--ac);border-color:var(--ac);color:var(--bg)}
+.grille{display:grid;gap:1.2rem;grid-template-columns:1.3fr 1fr 1fr;align-items:start}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:1rem}
+.cv{position:relative;height:300px}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid var(--bd);padding:.5rem;text-align:left}
+th{background:var(--ac);color:var(--bg)}
+tbody tr{cursor:pointer}
+tr.selected{background:var(--sel);font-weight:600}
+#detail{margin-top:1.2rem}
+#detail h2{margin-top:0}
+#detail pre{white-space:pre-wrap;font:inherit;margin:.5rem 0}
+.niveau{font-weight:600;margin:.8rem 0 .2rem}
+#detail ul{margin:0;padding-left:1.2rem}
+.preuves{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.preuves figure{margin:0;max-width:240px}
+.preuves img{width:100%;height:auto;border-radius:8px;border:1px solid var(--bd);background:var(--ac2);min-height:80px}
+.preuves figcaption{font-size:.85rem;color:var(--mut)}
+.mut{color:var(--mut)}
+.erreur{color:#b91c1c;font-weight:600}
+@media (max-width:900px){.grille{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+  <p><a href="/">← Retour au portfolio</a></p>
+  <h1>Compétences du BUT Science des Données</h1>
+
+  <div class="bar">
+    <div class="groupe" id="g-type">
+      <button id="btnBarres" class="active" type="button">Barres</button>
+      <button id="btnCourbes" type="button">Courbe</button>
+    </div>
+    <div class="groupe" id="g-annee"></div>
+  </div>
+
+  <div id="message" class="erreur" hidden></div>
+
+  <div class="grille">
+    <div class="card"><div class="cv"><canvas id="chartPrincipal"></canvas></div></div>
+    <div class="card">
+      <table id="intitulesTable">
+        <thead><tr><th>Compétence</th><th>Intitulé</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="card"><div class="cv"><canvas id="chartCamembert"></canvas></div></div>
+  </div>
+
+  <div id="detail" class="card">
+    <p class="mut">Cliquez sur une barre, une part du camembert ou une ligne du tableau pour voir la description de la compétence, ses apprentissages critiques et ses preuves.</p>
+  </div>
+</main>
+
+<script>
+const ORDRE = ['C1', 'C2', 'C3', 'C4'];
+const COULEURS = ['rgba(75,192,192,0.7)', 'rgba(54,162,235,0.7)', 'rgba(153,102,255,0.7)', 'rgba(255,99,132,0.7)'];
+const SURLIGNE = 'rgba(255,206,86,0.95)';
+const ANNEES = [['', 'Toutes les années'], ['1', 'BUT 1'], ['2', 'BUT 2'], ['3', 'BUT 3']];
+
+let chartPrincipal = null, chartPie = null;
+let typeGraphique = 'bar', annee = '', selection = null;
+let comps = []; // [{id_competence, intitule, total_heures}] dans l'ordre C1 à C4
+
+const $ = (s) => document.querySelector(s);
+const el = (tag, cls, txt) => {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (txt != null) e.textContent = txt;
+  return e;
+};
+
+function erreur(txt) {
+  const m = $('#message');
+  m.textContent = txt || '';
+  m.hidden = !txt;
+}
+
+async function api(url) {
+  const r = await fetch(url);
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(data.error || ('Erreur ' + r.status));
+  return data;
+}
+
+/* ---------- Filtre par année ---------- */
+function boutonsAnnee() {
+  const box = $('#g-annee');
+  box.replaceChildren(...ANNEES.map(([v, l]) => {
+    const b = el('button', v === annee ? 'active' : '', l);
+    b.type = 'button';
+    b.onclick = () => { annee = v; chargerHeures(); };
+    return b;
+  }));
+}
+
+/* ---------- Données ---------- */
+async function chargerHeures() {
+  try {
+    erreur('');
+    const data = await api('/api/heures' + (annee ? '?annee=' + encodeURIComponent(annee) : ''));
+    comps = ORDRE.map((id) => data.find((d) => d.id_competence === id) ||
+      { id_competence: id, intitule: 'Non disponible', total_heures: 0 });
+    boutonsAnnee();
+    tableau();
+    dessiner();
+    if (selection) surligner(selection);
+  } catch (e) {
+    erreur('Erreur de connexion au serveur : ' + e.message);
+  }
+}
+
+function tableau() {
+  const tbody = $('#intitulesTable tbody');
+  tbody.replaceChildren(...comps.map((d) => {
+    const tr = el('tr');
+    tr.append(el('td', '', d.id_competence), el('td', '', d.intitule));
+    tr.onclick = () => choisir(d.id_competence);
+    if (d.id_competence === selection) tr.classList.add('selected');
+    return tr;
+  }));
+}
+
+/* ---------- Graphiques ---------- */
+function dessiner() {
+  const labels = comps.map((d) => d.id_competence);
+  const heures = comps.map((d) => Number(d.total_heures));
+  const surClic = (evt, elements) => { if (elements.length) choisir(labels[elements[0].index]); };
+  const couleurs = (i) => (labels[i] === selection ? SURLIGNE : COULEURS[i]);
+
+  if (chartPrincipal) chartPrincipal.destroy();
+  if (chartPie) chartPie.destroy();
+
+  const ligne = typeGraphique === 'line';
+  chartPrincipal = new Chart($('#chartPrincipal'), {
+    type: typeGraphique,
+    data: {
+      labels,
+      datasets: [{
+        label: "Total d'heures",
+        data: heures,
+        backgroundColor: ligne ? 'rgba(54,162,235,0.25)' : labels.map((_, i) => couleurs(i)),
+        borderColor: ligne ? 'rgba(54,162,235,1)' : 'white',
+        borderWidth: ligne ? 2 : 2,
+        pointRadius: ligne ? 6 : 0,
+        pointBackgroundColor: labels.map((_, i) => couleurs(i)),
+        fill: ligne,
+        tension: 0.25
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, onClick: surClic,
+      plugins: {
+        legend: { display: false },
+        title: { display: true, text: 'Heures par compétence' + (annee ? ' · BUT ' + annee : '') }
+      },
+      scales: { y: { beginAtZero: true, title: { display: true, text: 'Heures' } }, x: { title: { display: true, text: 'Compétences' } } }
+    }
+  });
+
+  chartPie = new Chart($('#chartCamembert'), {
+    type: 'pie',
+    data: { labels, datasets: [{ data: heures, backgroundColor: labels.map((_, i) => couleurs(i)), borderColor: 'white', borderWidth: 2 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false, onClick: surClic,
+      plugins: { title: { display: true, text: 'Répartition des heures' }, legend: { position: 'bottom' } }
+    }
+  });
+}
+
+function surligner(comp) {
+  const labels = comps.map((d) => d.id_competence);
+  chartPrincipal.data.datasets[0].pointBackgroundColor = labels.map((l, i) => (l === comp ? SURLIGNE : COULEURS[i]));
+  if (typeGraphique === 'bar') chartPrincipal.data.datasets[0].backgroundColor = labels.map((l, i) => (l === comp ? SURLIGNE : COULEURS[i]));
+  chartPrincipal.update();
+  chartPie.data.datasets[0].backgroundColor = labels.map((l, i) => (l === comp ? SURLIGNE : COULEURS[i]));
+  chartPie.update();
+  document.querySelectorAll('#intitulesTable tbody tr').forEach((tr) => {
+    tr.classList.toggle('selected', tr.cells[0].textContent === comp);
+  });
+}
+
+/* ---------- Détail d'une compétence ---------- */
+async function choisir(comp) {
+  selection = comp;
+  surligner(comp);
+  const box = $('#detail');
+  try {
+    const d = await api('/api/competence/' + encodeURIComponent(comp));
+    if (selection !== comp) return; // une autre sélection est arrivée entre-temps
+    const h = comps.find((x) => x.id_competence === comp);
+    box.replaceChildren(el('h2', '', d.id_competence + ' · ' + d.intitule));
+    if (h) box.append(el('p', 'mut', h.total_heures + ' h' + (annee ? ' en BUT ' + annee : ' sur les trois années')));
+    box.append(el('pre', '', d.description));
+
+    const niveaux = [...new Set(d.apprentissages.map((a) => a.niveau))].sort();
+    niveaux.forEach((n) => {
+      const L = d.apprentissages.filter((a) => a.niveau === n);
+      box.append(el('div', 'niveau', 'Niveau ' + n + ' · ' + L[0].intitule_niveau));
+      const ul = el('ul');
+      L.forEach((a) => ul.append(el('li', '', a.id_ac + ' · ' + a.libelle_court)));
+      box.append(ul);
+    });
+
+    if (d.preuves.length) {
+      const zone = el('div', 'preuves');
+      d.preuves.forEach((p) => {
+        const fig = el('figure');
+        const img = el('img');
+        img.src = '/preuves/' + encodeURIComponent(p.fichier);
+        img.alt = 'Preuve ' + p.id_ac;
+        img.loading = 'lazy';
+        img.onerror = () => { img.remove(); fig.insertBefore(el('div', 'mut', 'Image à venir'), fig.firstChild); };
+        fig.append(img, el('figcaption', '', p.id_ac));
+        zone.append(fig);
+      });
+      box.append(el('h3', '', 'Preuves'), zone);
+    }
+  } catch (e) {
+    box.replaceChildren(el('p', 'erreur', 'Description non disponible : ' + e.message));
+  }
+}
+
+/* ---------- Boutons barres / courbe ---------- */
+function choisirType(type, id) {
+  typeGraphique = type;
+  document.querySelectorAll('#g-type button').forEach((b) => b.classList.toggle('active', b.id === id));
+  dessiner();
+}
+$('#btnBarres').onclick = () => choisirType('bar', 'btnBarres');
+$('#btnCourbes').onclick = () => choisirType('line', 'btnCourbes');
+
+boutonsAnnee();
+chargerHeures();
+</script>
+</body>
+</html>

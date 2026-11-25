@@ -8,55 +8,64 @@ Ce projet est un site web qui met en valeur mes compétences, issues du BUT Scie
 
 ## Données utilisées
 
-- Mes résultats obtenus lors des projets et mon volume horaire par compétence et par semestre (source : mes relevés de notes ; fichiers `donnees/notes.csv`, `donnees/modules.csv`, `donnees/semestres.csv`)
-- Les 4 compétences et 54 apprentissages critiques du BUT SD (source : programme national 2022, mis à jour en 2023 ; `donnees/competences.csv`, `donnees/apprentissages_critiques.csv`)
-- Mes projets : titre, description, outils, lien vers le code (source : saisie manuelle, `donnees/projets.csv`)
-- Mes technologies et mes documents (source : saisie manuelle, `donnees/technologies.csv`, `donnees/documents.csv`)
+- Mes résultats et mon volume horaire par compétence et par semestre (source : mes relevés de notes et mon emploi du temps ; tables `NOTE`, `MODULE`, `SEMESTRE`, `ACTIVITE_PEDAGOGIQUE`)
+- Les 4 compétences et 54 apprentissages critiques du BUT SD (source : programme national 2022, mis à jour en 2023 ; tables `COMPETENCE`, `APPRENTISSAGE_CRITIQUE`)
+- Mes projets : titre, description, outils, lien vers le code (source : saisie manuelle ; tables `PROJET`, `PROJET_TECHNOLOGIE`)
+- Mes technologies et mes documents (source : saisie manuelle ; tables `TECHNOLOGIE`, `DOCUMENT`)
 
-Chaque colonne est décrite dans `donnees/DICTIONNAIRE.md`.
+La structure est dans `donnees/schema.sql`, les données dans `donnees/donnees.sql`, et chaque colonne est décrite dans `donnees/DICTIONNAIRE.md`.
 
 ## Fonctionnalités
 
 - Navigation entre les sections : Accueil, Compétences, BUT SD, Notes, Projets, Documents (menu fixe, section active soulignée)
-- Visualisation du volume horaire par compétence (filtre BUT 1 / 2 / 3)
+- Visualisation du volume horaire par compétence (filtre BUT 1 / 2 / 3), avec une page de détail par compétence : description, apprentissages critiques, preuves
 - Visualisation de mes notes avec filtres par semestre et par module
 - Présentation de mes projets avec filtre par catégorie et fenêtre de détail
 - Accès à mon CV et à mes documents (filtre, téléchargement, aperçu)
 
 ## Technologies et bibliothèques
 
-- Langages : HTML, CSS, JavaScript (site) ; Python (préparation des données)
+- Langages : HTML, CSS, JavaScript (site) ; Node.js (serveur) ; SQL (base)
+- Serveur : Express 4 ; accès à la base : `pg`
+- Base de données : PostgreSQL (base `butsd`)
 - Bibliothèque de visualisation : Chart.js 4.4.1
-- Base de données : SQLite (`data/portfolio.db`, reconstruite depuis les CSV)
 
 ## Lancer le projet
 
-Je publie le site en public sur GitHub (GitHub Pages) et je travaille directement avec GitHub. Pour le tester en local :
+Prérequis : Node.js 18 ou plus et un serveur PostgreSQL local qui tourne (utilisateur `postgres` par défaut).
 
 ```bash
 git clone https://github.com/tshazlytembo123-bot/tshazly-man-tte.git
 cd tshazly-man-tte
-python scripts/charger_donnees.py   # valide les CSV et construit data/portfolio.db
-python scripts/generer_site.py      # génère html_site_web/index.html à partir des CSV
-python -m http.server 8000          # puis ouvrir http://localhost:8000/html_site_web/
+npm install          # une seule fois
+npm run init         # crée la base « butsd », les tables, les vues et les données
+npm start            # puis ouvrir http://localhost:3000
 ```
+
+- Si l'utilisateur ou le mot de passe de PostgreSQL ne sont pas ceux par défaut, les régler avant `npm run init` et `npm start` avec les variables `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT` ou `DATABASE_URL` (voir `.env.example`).
+- Après chaque modification de `donnees/donnees.sql` (nouvelles notes, niveaux des technologies…), relancer `npm run init`.
+- Page de détail des compétences : <http://localhost:3000/competences.html>. Vérification du serveur : <http://localhost:3000/api/sante>.
+
+Un site avec un serveur et une base de données ne peut pas être publié sur GitHub Pages : voir `architecture/ARCHITECTURE.md` § 11.
 
 ## Organisation du dépôt
 
+- `serveur/` : contrôleur Express (`server.js`)
+- `public/` : le site (`index.html`, `competences.html`, dossier `img/`)
+- `donnees/` : schéma SQL, données et dictionnaire
+- `preuves/` : images de preuve des apprentissages critiques
 - `maquette/` : maquettes du site et leurs évolutions
-- `donnees/` : jeux de données utilisés (CSV, schéma SQL, dictionnaire)
-- `scripts/` : validation des CSV, base SQLite et génération du site
-- `html_site_web/` : le site (`template.html`, `index.html` généré, dossier `img/`)
+- `documents/` : documents publics téléchargeables depuis le site
+- `prive/` : documents personnels (CV complet, lettre de motivation), jamais publiés (voir `.gitignore`)
 - `architecture/` : architecture générale (`ARCHITECTURE.md`)
-- `Jeu_des_donnees/` : archive de la page de la base de données
 - `choix_des_donnees.md` : choix des données
 - `AVANCEMENT.md` : journal de bord et planning suivi au fil du projet
 
 ## Difficultés et limites connues
 
 - Le temps de travail et la construction de ma maquette, qui change tout le temps.
-- changement frequement dans mes dossiers et donc je supprime et je remplace par un autre qui est correcte
-- resulats, statuts de validation et niveaux des technologies restent à saisir (voir `donnees/DICTIONNAIRE.md`) : les graphiques correspondants sont vides tant que ce n'est pas fait.
+- Notes, statuts de validation des semestres et niveaux des technologies restent à saisir dans `donnees/donnees.sql` (voir `donnees/DICTIONNAIRE.md`) : les graphiques correspondants sont vides tant que ce n'est pas fait.
+- Les images de preuve (`preuves/`) et la photo (`public/img/photo.jpg`) restent à déposer.
 
 ## Contact
 
