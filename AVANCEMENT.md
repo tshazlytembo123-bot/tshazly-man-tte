@@ -60,3 +60,11 @@ Début du projet → Choix des données → Maquette terminée → Première ver
 
 - Maquette en cours de construction (V1 du 06/10/2026 ; V2 = `public/`)
 - Architecture : passage de Python/Flask/SQLite (V1) à Node.js/Express/PostgreSQL (V2), voir `architecture/ARCHITECTURE.md` § 2
+##à faire
+# Documents publics
+avant de lancer de l'application
+Les fichiers de ce dossier sont **accessibles à tous** depuis le site (adresse `/documents/<fichier>`).
+
+N'y déposer que des documents sans numéro de téléphone, adresse, date de naissance ni numéro étudiant.
+Pour publier le CV : déposer une version « publique » (sans téléphone ni date de naissance) sous le nom
+`cv_tshazly.pdf`, puis passer `D02` à `'ok'` dans `donnees/donnees.sql` et lancer `npm run init`.
